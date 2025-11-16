@@ -1,0 +1,857 @@
+{
+    "mmoa": {
+        "anim_type": "offset",
+        "easing": "out_quart",
+        "duration": 1,
+        "play_event": "button.mmo",
+        "from": [
+            -300,
+            110
+        ],
+        "to": [
+            -185,
+            110
+        ]
+    },
+    "mmca": {
+        "anim_type": "offset",
+        "easing": "in_quart",
+        "duration": 1,
+        "from": [
+            -185,
+            110
+        ],
+        "to": [
+            -300,
+            110
+        ]
+    },
+    "mmcasl": {
+        "anim_type": "wait",
+        "duration": 1,
+        "next": "@hud.mmcasl2"
+    },
+    "mmcasl2": {
+        "anim_type": "size",
+        "easing": "in_quart",
+        "duration": 0.5,
+        "from": [
+            25,
+            0
+        ],
+        "to": [
+            25,
+            150
+        ],
+        "next": "@hud.mmcasl3"
+    },
+    "mmcasl3": {
+        "anim_type": "offset",
+        "easing": "in_quart",
+        "duration": 0.5,
+        "from": [
+            -222,
+            110
+        ],
+        "to": [
+            -275,
+            110
+        ],
+        "next": "@hud.mmcasl4"
+    },
+    "mmcasl4": {
+        "anim_type": "size",
+        "easing": "in_quart",
+        "duration": 0.0,
+        "to": [
+            25,
+            0
+        ],
+        "from": [
+            25,
+            150
+        ],
+        "next": "@hud.mmcasl5"
+    },
+    "mmcasl5": {
+        "anim_type": "offset",
+        "easing": "in_quart",
+        "duration": 0.0,
+        "to": [
+            -222,
+            110
+        ],
+        "from": [
+            -275,
+            110
+        ]
+    },
+    "mmcammt": {
+        "anim_type": "offset",
+        "easing": "in_quart",
+        "play_event": "button.mmo",
+        "duration": 0.0,
+        "from": [
+            -222,
+            110
+        ],
+        "to": [
+            -275,
+            110
+        ]
+    },
+    "mmoammt": {
+        "anim_type": "offset",
+        "easing": "out_quart",
+        "duration": 0.0,
+        "to": [
+            -222,
+            110
+        ],
+        "from": [
+            -275,
+            110
+        ]
+    },
+    "hud_content": {
+        "modifications": [
+            {
+                "array_name": "controls",
+                "operation": "insert_front",
+                "value": {
+                    "diamond_tweaks_hud_panel": {
+                        "type": "input_panel",
+                        "anchor_from": "top_middle",
+                        "anchor_to": "top_middle",
+                        "layer": 99,
+                        "size": [
+                            20,
+                            20
+                        ],
+                        "prevent_touch_input": true,
+                        "controls": [
+                            {
+                                "rp_title": {
+                                    "type": "image",
+                                    "texture": "textures/ui/Black",
+                                    "alpha": 0.5,
+                                    "offset": [
+                                        175,
+                                        0
+                                    ],
+                                    "size": [
+                                        "100%c+2",
+                                        "100%c+9"
+                                    ],
+                                    "controls": [
+                                        {
+                                            "dtt": {
+                                                "type": "label",
+                                                "font_size": "normal",
+                                                "text": "§l§bDiamond Tweaks",
+                                                "shadow": true
+                                            }
+                                        },
+                                        {
+                                            "et": {
+                                                "type": "label",
+                                                "offset": [
+                                                    0,
+                                                    7
+                                                ],
+                                                "font_size": "small",
+                                                "text": "§lMinimal",
+                                                "shadow": true
+                                            }
+                                        }
+                                    ],
+                                    "bindings": [
+                                        {
+                                            "binding_type": "view",
+                                            "source_control_name": "watermark_tgl",
+                                            "source_property_name": "#toggle_state",
+                                            "target_property_name": "#mytgl"
+                                        },
+                                        {
+                                            "binding_name": "#hud_visible",
+                                            "binding_name_override": "#hv",
+                                            "binding_type": "global"
+                                        },
+                                        {
+                                            "binding_type": "view",
+                                            "source_property_name": "(#mytgl and #hv)",
+                                            "target_property_name": "#visible"
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "f1btn@common.button": {
+                                    "offset": [
+                                        -67,
+                                        0
+                                    ],
+                                    "size": [
+                                        18,
+                                        18
+                                    ],
+                                    "prevent_touch_input": true,
+                                    "button_mappings": [
+                                        {
+                                            "from_button_id": "button.menu_select",
+                                            "to_button_id": "button.hide_gui_all",
+                                            "mapping_type": "pressed"
+                                        }
+                                    ],
+                                    "bindings": [
+                                        {
+                                            "binding_type": "view",
+                                            "source_control_name": "f1_tgl",
+                                            "source_property_name": "#toggle_state",
+                                            "target_property_name": "#visible"
+                                        }
+                                    ],
+                                    "controls": [
+                                        {
+                                            "f1txt": {
+                                                "type": "label",
+                                                "layer": 2,
+                                                "text": "F1",
+                                                "alpha": 0.75,
+                                                "color": [
+                                                    0.0,
+                                                    0.0,
+                                                    0.0
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "f1bg": {
+                                                "type": "image",
+                                                "layer": 1,
+                                                "texture": "textures/dt/hud_button.png"
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "mod_menu_panel_touchfix": {
+                                    "type": "input_panel",
+                                    "offset": [
+                                        -220,
+                                        85
+                                    ],
+                                    "size": [
+                                        25,
+                                        150
+                                    ],
+                                    "prevent_touch_input": true
+                                }
+                            },
+                            {
+                                "mod_menu_panel_sidelight": {
+                                    "type": "image",
+                                    "texture": "textures/dt/side_light",
+                                    "offset": [
+                                        -222,
+                                        110
+                                    ],
+                                    "size": [
+                                        25,
+                                        150
+                                    ],
+                                    "animation_reset_name": "button.mmc",
+                                    "anims": [
+                                        "@hud.mmcasl"
+                                    ]
+                                }
+                            },
+                            {
+                                "mod_menu_panel": {
+                                    "type": "input_panel",
+                                    "offset": [
+                                        -185,
+                                        85
+                                    ],
+                                    "size": [
+                                        110,
+                                        150
+                                    ],
+                                    "animation_reset_name": "button.mmc",
+                                    "anims": [
+                                        "@hud.mmoa",
+                                        "@hud.mmca"
+                                    ],
+                                    "controls": [
+                                        {
+                                            "mmpbg": {
+                                                "type": "image",
+                                                "texture": "textures/ui/Black",
+                                                "layer": -5,
+                                                "alpha": 0.25
+                                            }
+                                        },
+                                        {
+                                            "mod_menu_title": {
+                                                "type": "label",
+                                                "font_size": "normal",
+                                                "font_scale_factor": 1.5,
+                                                "font_type": "MinecraftTen",
+                                                "text": "MOD MENU",
+                                                "offset": [
+                                                    15,
+                                                    -63
+                                                ],
+                                                "shadow": true
+                                            }
+                                        },
+                                        {
+                                            "mod_menu_close@common_buttons.light_text_button": {
+                                                "offset": [
+                                                    -37,
+                                                    -62
+                                                ],
+                                                "size": [
+                                                    18,
+                                                    18
+                                                ],
+                                                "$default_button_texture": "textures/dt/button_borderless_light",
+                                                "$hover_button_texture": "textures/dt/button_borderless_lighthover",
+                                                "$pressed_button_texture": "textures/dt/button_borderless_lightpressed",
+                                                "$button_text": "X",
+                                                "prevent_touch_input": true,
+                                                "button_mappings": [
+                                                    {
+                                                        "from_button_id": "button.menu_select",
+                                                        "to_button_id": "button.mmc",
+                                                        "mapping_type": "pressed"
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "f1toggle@common.toggle": {
+                                                "offset": [
+                                                    -35,
+                                                    25
+                                                ],
+                                                "size": [
+                                                    70,
+                                                    20
+                                                ],
+                                                "prevent_touch_input": true,
+                                                "anchor_from": "top_right",
+                                                "anchor_to": "top_right",
+                                                "controls": [
+                                                    {
+                                                        "f1tt@common_toggles.switch_toggle": {
+                                                            "layer": 1,
+                                                            "offset": [
+                                                                -15,
+                                                                0
+                                                            ],
+                                                            "anchor_from": "right_middle",
+                                                            "anchor_to": "right_middle",
+                                                            "$default_texture": "textures/dt/toggle_off",
+                                                            "$hover_texture": "textures/dt/toggle_on",
+                                                            "$pressed_texture": "textures/dt/toggle_off_hover",
+                                                            "$pressed_no_hover_texture": "textures/dt/toggle_on_hover",
+                                                            "$unchecked_locked_texture": "textures/dt/toggle_off",
+                                                            "$checked_locked_texture": "textures/dt/toggle_on",
+                                                            "$default_border_visible": false,
+                                                            "$hover_border_visible": false,
+                                                            "$toggle_view_binding_name": "f1_tgl"
+                                                        }
+                                                    },
+                                                    {
+                                                        "f1txt": {
+                                                            "type": "label",
+                                                            "layer": 2000,
+                                                            "text": "F1 Button",
+                                                            "alpha": 0.75,
+                                                            "anchor_from": "right_middle",
+                                                            "anchor_to": "right_middle",
+                                                            "offset": [
+                                                                30,
+                                                                0
+                                                            ],
+                                                            "color": [
+                                                                1.0,
+                                                                1.0,
+                                                                1.0
+                                                            ]
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "f8toggle@common.toggle": {
+                                                "offset": [
+                                                    -35,
+                                                    50
+                                                ],
+                                                "size": [
+                                                    70,
+                                                    20
+                                                ],
+                                                "prevent_touch_input": true,
+                                                "anchor_from": "top_right",
+                                                "anchor_to": "top_right",
+                                                "controls": [
+                                                    {
+                                                        "f8tt@common_toggles.switch_toggle": {
+                                                            "layer": 1,
+                                                            "offset": [
+                                                                -15,
+                                                                0
+                                                            ],
+                                                            "anchor_from": "right_middle",
+                                                            "anchor_to": "right_middle",
+                                                            "$default_texture": "textures/dt/toggle_off",
+                                                            "$hover_texture": "textures/dt/toggle_on",
+                                                            "$pressed_texture": "textures/dt/toggle_off_hover",
+                                                            "$pressed_no_hover_texture": "textures/dt/toggle_on_hover",
+                                                            "$unchecked_locked_texture": "textures/dt/toggle_off",
+                                                            "$checked_locked_texture": "textures/dt/toggle_on",
+                                                            "$default_border_visible": false,
+                                                            "$hover_border_visible": false,
+                                                            "$toggle_view_binding_name": "f8_tgl"
+                                                        }
+                                                    },
+                                                    {
+                                                        "f8txt": {
+                                                            "type": "label",
+                                                            "layer": 2000,
+                                                            "text": "F8 Button",
+                                                            "alpha": 0.75,
+                                                            "anchor_from": "right_middle",
+                                                            "anchor_to": "right_middle",
+                                                            "offset": [
+                                                                30,
+                                                                0
+                                                            ],
+                                                            "color": [
+                                                                1.0,
+                                                                1.0,
+                                                                1.0
+                                                            ]
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "quick_hotbar_toggle@common.toggle": {
+                                                "offset": [
+                                                    -35,
+                                                    75
+                                                ],
+                                                "size": [
+                                                    70,
+                                                    20
+                                                ],
+                                                "prevent_touch_input": true,
+                                                "anchor_from": "top_right",
+                                                "anchor_to": "top_right",
+                                                "controls": [
+                                                    {
+                                                        "qhtt@common_toggles.switch_toggle": {
+                                                            "layer": 1,
+                                                            "offset": [
+                                                                -15,
+                                                                0
+                                                            ],
+                                                            "anchor_from": "right_middle",
+                                                            "anchor_to": "right_middle",
+                                                            "$default_texture": "textures/dt/toggle_off",
+                                                            "$hover_texture": "textures/dt/toggle_on",
+                                                            "$pressed_texture": "textures/dt/toggle_off_hover",
+                                                            "$pressed_no_hover_texture": "textures/dt/toggle_on_hover",
+                                                            "$unchecked_locked_texture": "textures/dt/toggle_off",
+                                                            "$checked_locked_texture": "textures/dt/toggle_on",
+                                                            "$default_border_visible": false,
+                                                            "$hover_border_visible": false,
+                                                            "$toggle_view_binding_name": "quick_hotbar_tgl"
+                                                        }
+                                                    },
+                                                    {
+                                                        "qhtxt": {
+                                                            "type": "label",
+                                                            "layer": 2000,
+                                                            "text": "QuickHotbar",
+                                                            "alpha": 0.75,
+                                                            "anchor_from": "right_middle",
+                                                            "anchor_to": "right_middle",
+                                                            "offset": [
+                                                                30,
+                                                                0
+                                                            ],
+                                                            "color": [
+                                                                1.0,
+                                                                1.0,
+                                                                1.0
+                                                            ]
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "watermark_toggle@common.toggle": {
+                                                "offset": [
+                                                    -35,
+                                                    100
+                                                ],
+                                                "size": [
+                                                    70,
+                                                    20
+                                                ],
+                                                "prevent_touch_input": true,
+                                                "anchor_from": "top_right",
+                                                "anchor_to": "top_right",
+                                                "$toggle_default_state": true,
+                                                "controls": [
+                                                    {
+                                                        "wtt@common_toggles.switch_toggle": {
+                                                            "layer": 1,
+                                                            "offset": [
+                                                                -15,
+                                                                0
+                                                            ],
+                                                            "anchor_from": "right_middle",
+                                                            "anchor_to": "right_middle",
+                                                            "$default_texture": "textures/dt/toggle_off",
+                                                            "$hover_texture": "textures/dt/toggle_on",
+                                                            "$pressed_texture": "textures/dt/toggle_off_hover",
+                                                            "$pressed_no_hover_texture": "textures/dt/toggle_on_hover",
+                                                            "$unchecked_locked_texture": "textures/dt/toggle_off",
+                                                            "$checked_locked_texture": "textures/dt/toggle_on",
+                                                            "$default_border_visible": false,
+                                                            "$hover_border_visible": false,
+                                                            "$toggle_view_binding_name": "watermark_tgl"
+                                                        }
+                                                    },
+                                                    {
+                                                        "watermarktxt": {
+                                                            "type": "label",
+                                                            "layer": 2000,
+                                                            "text": "Watermark",
+                                                            "alpha": 0.75,
+                                                            "anchor_from": "right_middle",
+                                                            "anchor_to": "right_middle",
+                                                            "offset": [
+                                                                30,
+                                                                0
+                                                            ],
+                                                            "color": [
+                                                                1.0,
+                                                                1.0,
+                                                                1.0
+                                                            ]
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "gamma_toggle@common.toggle": {
+                                                "offset": [
+                                                    -35,
+                                                    125
+                                                ],
+                                                "size": [
+                                                    70,
+                                                    20
+                                                ],
+                                                "prevent_touch_input": true,
+                                                "anchor_from": "top_right",
+                                                "anchor_to": "top_right",
+                                                "controls": [
+                                                    {
+                                                        "gtt@common_toggles.switch_toggle": {
+                                                            "layer": 1,
+                                                            "offset": [
+                                                                -15,
+                                                                0
+                                                            ],
+                                                            "anchor_from": "right_middle",
+                                                            "anchor_to": "right_middle",
+                                                            "$default_texture": "textures/dt/toggle_off",
+                                                            "$hover_texture": "textures/dt/toggle_on",
+                                                            "$pressed_texture": "textures/dt/toggle_off_hover",
+                                                            "$pressed_no_hover_texture": "textures/dt/toggle_on_hover",
+                                                            "$unchecked_locked_texture": "textures/dt/toggle_off",
+                                                            "$checked_locked_texture": "textures/dt/toggle_on",
+                                                            "$default_border_visible": false,
+                                                            "$hover_border_visible": false,
+                                                            "$toggle_view_binding_name": "gamma_tgl"
+                                                        }
+                                                    },
+                                                    {
+                                                        "gammatxt": {
+                                                            "type": "label",
+                                                            "layer": 2000,
+                                                            "text": "Gamma",
+                                                            "alpha": 0.75,
+                                                            "anchor_from": "right_middle",
+                                                            "anchor_to": "right_middle",
+                                                            "offset": [
+                                                                30,
+                                                                0
+                                                            ],
+                                                            "color": [
+                                                                1.0,
+                                                                1.0,
+                                                                1.0
+                                                            ]
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "mod_menu_open@common.button": {
+                                    "offset": [
+                                        -222,
+                                        110
+                                    ],
+                                    "size": [
+                                        25,
+                                        150
+                                    ],
+                                    "animation_reset_name": "button.mmc",
+                                    "anims": [
+                                        "@hud.mmoammt",
+                                        "@hud.mmcammt"
+                                    ],
+                                    "prevent_touch_input": true,
+                                    "bindings": [
+                                        {
+                                            "binding_name": "#hud_visible",
+                                            "binding_name_override": "#visible",
+                                            "binding_type": "global"
+                                        }
+                                    ],
+                                    "button_mappings": [
+                                        {
+                                            "from_button_id": "button.menu_select",
+                                            "to_button_id": "button.mmo",
+                                            "mapping_type": "pressed"
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "f8btn@common.button": {
+                                    "offset": [
+                                        -87,
+                                        0
+                                    ],
+                                    "size": [
+                                        18,
+                                        18
+                                    ],
+                                    "prevent_touch_input": true,
+                                    "button_mappings": [
+                                        {
+                                            "from_button_id": "button.menu_select",
+                                            "to_button_id": "button.hide_paperdoll_hud",
+                                            "mapping_type": "pressed"
+                                        }
+                                    ],
+                                    "bindings": [
+                                        {
+                                            "binding_type": "view",
+                                            "source_control_name": "f8_tgl",
+                                            "source_property_name": "#toggle_state",
+                                            "target_property_name": "#mytgl"
+                                        },
+                                        {
+                                            "binding_name": "#hud_visible",
+                                            "binding_name_override": "#hv",
+                                            "binding_type": "global"
+                                        },
+                                        {
+                                            "binding_type": "view",
+                                            "source_property_name": "(#mytgl and #hv)",
+                                            "target_property_name": "#visible"
+                                        }
+                                    ],
+                                    "controls": [
+                                        {
+                                            "f8txt": {
+                                                "type": "label",
+                                                "layer": 2,
+                                                "text": "F8",
+                                                "alpha": 0.75,
+                                                "color": [
+                                                    0.0,
+                                                    0.0,
+                                                    0.0
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "f8bg": {
+                                                "type": "image",
+                                                "layer": 1,
+                                                "texture": "textures/dt/hud_button.png"
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "quick1@common.button": {
+                                    "offset": [
+                                        110,
+                                        70
+                                    ],
+                                    "size": [
+                                        36,
+                                        36
+                                    ],
+                                    "prevent_touch_input": true,
+                                    "button_mappings": [
+                                        {
+                                            "from_button_id": "button.menu_select",
+                                            "to_button_id": "button.slot_1",
+                                            "mapping_type": "pressed"
+                                        }
+                                    ],
+                                    "bindings": [
+                                        {
+                                            "binding_type": "view",
+                                            "source_control_name": "quick_hotbar_tgl",
+                                            "source_property_name": "#toggle_state",
+                                            "target_property_name": "#mytgl"
+                                        },
+                                        {
+                                            "binding_name": "#hud_visible",
+                                            "binding_name_override": "#hv",
+                                            "binding_type": "global"
+                                        },
+                                        {
+                                            "binding_type": "view",
+                                            "source_property_name": "(#mytgl and #hv)",
+                                            "target_property_name": "#visible"
+                                        }
+                                    ],
+                                    "controls": [
+                                        {
+                                            "quick1txt": {
+                                                "type": "label",
+                                                "layer": 2,
+                                                "text": "[1]",
+                                                "font_size": "large",
+                                                "alpha": 0.75,
+                                                "color": [
+                                                    0.0,
+                                                    0.0,
+                                                    0.0
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "quick1bg": {
+                                                "type": "image",
+                                                "layer": 1,
+                                                "texture": "textures/dt/hud_button.png"
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "quick8@common.button": {
+                                    "offset": [
+                                        110,
+                                        30
+                                    ],
+                                    "size": [
+                                        36,
+                                        36
+                                    ],
+                                    "prevent_touch_input": true,
+                                    "button_mappings": [
+                                        {
+                                            "from_button_id": "button.menu_select",
+                                            "to_button_id": "button.slot_8",
+                                            "mapping_type": "pressed"
+                                        }
+                                    ],
+                                    "bindings": [
+                                        {
+                                            "binding_type": "view",
+                                            "source_control_name": "quick_hotbar_tgl",
+                                            "source_property_name": "#toggle_state",
+                                            "target_property_name": "#mytgl"
+                                        },
+                                        {
+                                            "binding_name": "#hud_visible",
+                                            "binding_name_override": "#hv",
+                                            "binding_type": "global"
+                                        },
+                                        {
+                                            "binding_type": "view",
+                                            "source_property_name": "(#mytgl and #hv)",
+                                            "target_property_name": "#visible"
+                                        }
+                                    ],
+                                    "controls": [
+                                        {
+                                            "quick8txt": {
+                                                "type": "label",
+                                                "layer": 2,
+                                                "text": "[8]",
+                                                "font_size": "large",
+                                                "alpha": 0.75,
+                                                "color": [
+                                                    0.0,
+                                                    0.0,
+                                                    0.0
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "quick8bg": {
+                                                "type": "image",
+                                                "layer": 1,
+                                                "texture": "textures/dt/hud_button.png"
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "diamond_tweaks_gamma": {
+                                    "type": "image",
+                                    "texture": "textures/ui/White",
+                                    "alpha": 0.25,
+                                    "size": [
+                                        1000,
+                                        1000
+                                    ],
+                                    "layer": 1,
+                                    "bindings": [
+                                        {
+                                            "binding_type": "view",
+                                            "source_control_name": "gamma_tgl",
+                                            "source_property_name": "#toggle_state",
+                                            "target_property_name": "#visible"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    }
+}

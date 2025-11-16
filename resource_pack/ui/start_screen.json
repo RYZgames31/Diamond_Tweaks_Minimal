@@ -1,0 +1,26 @@
+{
+    "start_screen_content": {
+        "modifications": [
+            {
+                "array_name": "controls",
+                "operation": "insert_front",
+                "value": [
+                    {
+                        "exit_game@common_buttons.light_text_button": {
+                            "$pressed_button_name": "button.menu_exit",
+                            "$button_text": "x",
+                            "size": [
+                                15,
+                                15
+                            ],
+                            "offset": [
+                                200,
+                                -90
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

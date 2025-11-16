@@ -1,0 +1,32 @@
+{
+    "format_version": 2,
+    "header": {
+        "name": "Diamond Tweaks Minimal",
+        "description": "Rework and redesign of DTV1.\nNow, also open-source.\n\nBy RYZgames31/VRRYZzz\nOnly for touch devices",
+        "uuid": "ee6127a4-e5a0-405c-80c9-5a8811c44a30",
+        "version": [
+            2,
+            0,
+            0
+        ],
+        "min_engine_version": [
+            1,
+            16,
+            0
+        ]
+    },
+    "modules": [
+        {
+            "type": "resources",
+            "uuid": "33b0d166-3863-430d-9b2a-ab70f77bde64",
+            "version": [
+                2,
+                0,
+                0
+            ]
+        }
+    ],
+    "metadata": {
+        "product_type": "addon"
+    }
+}
